@@ -10,4 +10,6 @@ func main() {
 	feature1.Feature1()
 
 	fmt.Println("main end")
+
+	fmt.Println("ЧТО ЗА ХУЙНЯ ЩАС БЫЛА")
 }
