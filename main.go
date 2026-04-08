@@ -14,4 +14,7 @@ func main() {
 	fmt.Println("ЧТО ЗА ХУЙНЯ ЩАС БЫЛА")
 
 	fmt.Println("ХУй")
+
+	a := 0
+	fmt.Println(a)
 }
