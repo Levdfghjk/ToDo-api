@@ -12,4 +12,6 @@ func main() {
 	fmt.Println("main end")
 
 	fmt.Println("ЧТО ЗА ХУЙНЯ ЩАС БЫЛА")
+
+	fmt.Println("ХУй")
 }
