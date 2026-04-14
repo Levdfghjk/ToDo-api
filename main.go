@@ -2,19 +2,24 @@ package main
 
 import (
 	"fmt"
-	"study/feature1"
+	"net/http"
+	"study/handlers"
+
+	"github.com/gorilla/mux"
 )
 
+func pingHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("pong"))
+}
+
 func main() {
-	fmt.Println("Hello, Git")
-	feature1.Feature1()
+	rounter := mux.NewRouter()
 
-	fmt.Println("main end")
+	rounter.HandleFunc("/ping", pingHandler).Methods("GET")
+	rounter.HandleFunc("/tasks", handlers.GetTasks).Methods("GET")
 
-	fmt.Println("ЧТО ЗА ХУЙНЯ ЩАС БЫЛА")
-
-	fmt.Println("ХУй")
-
-	a := 0
-	fmt.Println(a)
+	err := http.ListenAndServe(":9091", rounter)
+	if err != nil {
+		fmt.Println("Ошибка запуска сервера")
+	}
 }
